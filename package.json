@@ -1,0 +1,39 @@
+{
+  "name": "resend-edge",
+  "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bru02/resend-edge.git"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "devDependencies": {
+    "@types/react": "^18.2.24",
+    "bun-types": "^1.0.3",
+    "changelogen": "^0.5.5",
+    "typescript": "^5.1.6"
+  },
+  "peerDependencies": {
+    "@react-email/render": "^0.0.7"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "description": "",
+  "files": [
+    "dist"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "prepack": "bun run build",
+    "release": "bun test && changelogen --release && npm publish && git push --follow-tags"
+  },
+  "sideEffects": false,
+  "type": "module",
+  "types": "./dist/index.d.ts"
+}
